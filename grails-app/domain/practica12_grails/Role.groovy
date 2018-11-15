@@ -4,6 +4,8 @@ class Role {
 
     String roleName
 
+    User user
+
     static constraints = {
     }
 }

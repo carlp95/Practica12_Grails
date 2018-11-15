@@ -9,8 +9,13 @@ class Contact {
     String address
     String work_position
     String mobile
-    String category
+    Category category
+    Date created
+    Date lastUpdated
+    String byUser
 
+
+    static belongsTo = [category: Category]
     static hasMany = [departmentList: Department]
 
     static constraints = {
@@ -22,5 +27,6 @@ class Contact {
         work_position(blank: false)
         mobile(blank: false)
         category(blank: false)
+        byUser(nullable: false)
     }
 }
