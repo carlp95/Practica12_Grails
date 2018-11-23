@@ -1,19 +1,22 @@
 package practica12_grails
 
 import grails.validation.ValidationException
+import org.springframework.security.access.annotation.Secured
+
 import static org.springframework.http.HttpStatus.*
 
+@Secured(['ROLE_ADMIN'])
 class CategoryController {
 
     CategoryService categoryService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
+    @Secured(['permitAll'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond categoryService.list(params), model:[categoryCount: categoryService.count()]
     }
-
+    @Secured(['permitAll'])
     def show(Long id) {
         respond categoryService.get(id)
     }

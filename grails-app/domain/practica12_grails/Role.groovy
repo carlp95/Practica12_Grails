@@ -1,11 +1,23 @@
 package practica12_grails
 
-class Role {
+import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
+import grails.compiler.GrailsCompileStatic
 
-    String roleName
+@GrailsCompileStatic
+@EqualsAndHashCode(includes='authority')
+@ToString(includes='authority', includeNames=true, includePackage=false)
+class Role implements Serializable {
 
-    User user
+	private static final long serialVersionUID = 1
 
-    static constraints = {
-    }
+	String authority
+
+	static constraints = {
+		authority nullable: false, blank: false, unique: true
+	}
+
+	static mapping = {
+		cache true
+	}
 }
