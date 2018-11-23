@@ -9,8 +9,10 @@
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale= 1">
-
-    <asset:stylesheet src="style.css"/>
+    <link rel="stylesheet" href="webjars/bootstrap/4.1.3/css/bootstrap.css">
+    <asset:link rel="stylesheet" href="style.css"/>
+    <asset:javascript src="webjars/font-awesome/5.3.1/js/solid.js"/>
+    <asset:javascript src="webjars/font-awesome/5.3.1/js/fontawesome.js"/>
     <g:layoutHead/>
 </head>
 
@@ -18,26 +20,50 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="/"><h3>Department Management</h3></a>
+                <a href="/"><h3> <g:message code="home.title"/></h3></a>
             </div>
             <ul class="list-unstyled components">
                 <li>
-                    <a href="/category"><i class="fas fa-bookmark"></i> Category</a>
+                    <a href="#categorySubmenu" data-toggle="collapse" class="dropdown-toggle"><i class="fa fa-bookmark"></i>   <g:message code="menu.title.category"/></a>
+                    <ul class="collapse list-unstyled" id="categorySubmenu">
+                        <li>
+                            <a href="/category/create"><g:message code="submenu.create"/> </a>
+                        </li>
+                        <li>
+                            <a href="/category"><g:message code="submenu.list"/> </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="/contact"><i class="fas fa-address-card"></i>Contact</a>
+                    <a href="#contactSubmenu"><i class="fa fa-address-card"></i>   <g:message code="menu.title.contact"/></a>
+                    <ul class="collapse list-unstyled" id="contactSubmenu">
+                        <li>
+                            <a href="/contact/create"><g:message code="submenu.create"/> </a>
+                        </li>
+                        <li>
+                            <a href="/contact"><g:message code="submenu.list"/> </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="/department"><i class="fas fa-briefcase"></i>Department</a>
+                    <a href="#departmentSubmenu"><i class="fa fa-briefcase"></i>   <g:message code="menu.title.department"/></a>
+                    <ul class="collapse list-unstyled" id="departmentSubmenu">
+                        <li>
+                            <a href="/department/create"><g:message code="submenu.create"/> </a>
+                        </li>
+                        <li>
+                            <a href="/department"><g:message code="submenu.list"/> </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
         <div id="content">
-
+            <g:layoutBody/>
         </div>
     </div>
-    <g:layoutBody/>
     <div class="footer" role="contentinfo"></div>
+    <asset:javascript src="webjars/jquery/3.1.1/jquery.js"/>
     <asset:javascript src="collapser.js"/>
 </body>
 </html>
