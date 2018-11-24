@@ -8,7 +8,6 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/dbconsole/**',      access: ['ROLE_ADMIN']],
 	[pattern: '/error',          access: ['permitAll']],
-	[pattern: '/home/**',          access: ['permitAll']],
 	[pattern: '/index',          access: ['permitAll']],
 	[pattern: '/index.gsp',      access: ['permitAll']],
 	[pattern: '/shutdown',       access: ['permitAll']],

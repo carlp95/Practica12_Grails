@@ -8,7 +8,7 @@
     <div id="content" role="main">
         <section class="row colset-2-its">
             <h1><g:message code="welcome.header"/></h1>
-
+            <h3>Buenas noches, ${user.name}</h3>
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>

@@ -5,8 +5,8 @@
     <asset:link rel="stylesheet" href="webjars/bootstrap/4.1.3/css/bootstrap.min.css"/>
     <asset:link rel="stylesheet" href="login.css"/>
     <asset:link rel="stylesheet" href="webjars/font-awesome/5.3.1/css/fontawesome.min.css"/>
-    <script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="webjars/jquery/3.1.1/jquery.min.js"></script>
+    <asset:script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"/>
+    <asset:script src="webjars/jquery/3.1.1/jquery.min.js"/>
 </head>
 
 <body>
@@ -16,14 +16,17 @@
             <div class="card card-signin my-5">
                 <div class="card-body">
                     <h5 class="card-title text-center"><g:message code="signin.label"/></h5>
-                    <form class="form-signin" action="/login" method="post" autocomplete="off">
+                    <g:if test="${flash.message}">
+                        <div class="login_message">${flash.message}</div>
+                    </g:if>
+                    <form action="/login/authenticate" method="POST" id="loginForm" autocomplete="off">
                         <div class="form-label-group">
-                            <input type="text" id="username" class="form-control" placeholder="${message(code: "username.label")}" required autofocus>
+                            <input type="text" id="username" name="username" class="form-control text_" placeholder="${message(code: "username.label")}" required autofocus>
                             <label for="username"><g:message code="username.label"/></label>
                         </div>
 
                         <div class="form-label-group">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="${message(code: 'password.label')}" required>
+                            <input type="password" id="inputPassword" name="password" class="form-control text_" placeholder="${message(code: 'password.label')}" required>
                             <label for="inputPassword"><g:message code="password.label"/></label>
                         </div>
 
