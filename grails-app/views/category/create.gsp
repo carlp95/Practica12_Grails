@@ -20,7 +20,11 @@
             </g:hasErrors>
             <g:form resource="${this.category}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="category"/>
+                    %{--<f:all bean="category"/>--}%
+                    <f:field bean="category" property="created">
+                        <g:textField name="${property}" value="${}"/>
+                    </f:field>
+                    <f:field bean="category" property="created"/>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

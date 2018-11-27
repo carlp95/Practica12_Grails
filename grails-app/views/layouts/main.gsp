@@ -18,14 +18,15 @@
     <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+                %{--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">--}%
+                    %{--<span class="sr-only">Toggle navigation</span>--}%
+                    %{--<span class="icon-bar"></span>--}%
+                    %{--<span class="icon-bar"></span>--}%
+                    %{--<span class="icon-bar"></span>--}%
+                %{--</button>--}%
                 <a class="navbar-brand" href="/#">
-		    <asset:image src="grails.svg" alt="Grails Logo"/>
+		            %{--<asset:image src="pucmm.png" alt="Pucmm Logo"/>--}%
+                    <h1>PUCMM ISC</h1>
                 </a>
             </div>
             <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
@@ -38,7 +39,9 @@
 
     <g:layoutBody/>
 
-    <div class="footer" role="contentinfo"></div>
+    <div class="footer" role="contentinfo">
+        Copyright © 2018 - Banagreen
+    </div>
 
     <div id="spinner" class="spinner" style="display:none;">
         <g:message code="spinner.alt" default="Loading&hellip;"/>

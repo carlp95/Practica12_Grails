@@ -6,10 +6,11 @@ class Category {
     Date created
     Date lastUpdated
     String byUser
-
     static hasMany = [contacts : Contact]
     static constraints = {
-        byUser(nullable: false)
+        byUser(nullable: false, display: false, editable: false)
+        lastUpdated(display: false, editable: false)
+        created(display: false, editable: false)
     }
 
     String toString(){
