@@ -16,17 +16,21 @@ class Contact {
 
 
     static belongsTo = [category: Category]
-    static hasMany = [departmentList: Department]
+    static hasMany = [departments: Department]
 
     static constraints = {
         name(blank: false)
         lastName(blank: false)
-        email(email: true)
-        phone(blank: false)
+        email email: true, unique: true
+        phone blank: false
         address(blank: false)
         work_position(blank: false)
-        mobile(blank: false)
+        mobile blank: false, unique: true
         category(blank: false)
-        byUser(nullable: false)
+        byUser(nullable: false, display: false, editable: false)
+    }
+
+    String toString(){
+        name + " " + lastName
     }
 }

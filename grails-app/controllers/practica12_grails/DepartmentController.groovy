@@ -20,7 +20,18 @@ class DepartmentController {
 
     @Secured(['permitAll'])
     def show(Long id) {
-        respond departmentService.get(id)
+        def user = (User) applicationContext.springSecurityService.getCurrentUser()
+
+        if (user.getAuthorities().toList().find {it.authority == 'ROLE_ADMIN'} && departmentService.get(id).name == 'Administration'){
+            respond departmentService.get(id)
+        }else if (user.getAuthorities().toList().find {it.authority == 'ROLE_ACCOUNTANT'} && departmentService.get(id).name == 'Accounting'){
+            respond departmentService.get(id)
+        }else if (user.getAuthorities().toList().find {it.authority == 'ROLE_TI'} && departmentService.get(id).name == 'Information Technology'){
+            respond departmentService.get(id)
+        }else if (user.getAuthorities().toList().find {it.authority == 'ROLE_HUMANR'} && departmentService.get(id).name == 'Human Resources'){
+            respond departmentService.get(id)
+        }
+
     }
 
     def create() {

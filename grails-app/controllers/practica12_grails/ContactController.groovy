@@ -1,8 +1,11 @@
 package practica12_grails
 
 import grails.validation.ValidationException
+import org.springframework.security.access.annotation.Secured
+
 import static org.springframework.http.HttpStatus.*
 
+@Secured(['ROLE_ADMIN', 'ROLE_ACCOUNTANT', 'ROLE_TI', 'ROLE_HUMANR'])
 class ContactController {
 
     ContactService contactService
@@ -29,6 +32,8 @@ class ContactController {
         }
 
         try {
+            contact.byUser = ((User)applicationContext.springSecurityService.getCurrentUser()).username
+            contact.created = new Date()
             contactService.save(contact)
         } catch (ValidationException e) {
             respond contact.errors, view:'create'

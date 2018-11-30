@@ -11,6 +11,11 @@ class Department {
     static belongsTo = [Contact, User]
 
     static constraints = {
-        byUser(nullable: false)
+        byUser(nullable: true)
+        name unique: true
+
+    }
+    String toString(){
+        name
     }
 }

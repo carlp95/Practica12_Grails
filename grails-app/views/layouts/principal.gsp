@@ -13,6 +13,8 @@
     <asset:link rel="stylesheet" href="style.css"/>
     <asset:javascript src="webjars/font-awesome/5.3.1/js/solid.js"/>
     <asset:javascript src="webjars/font-awesome/5.3.1/js/fontawesome.js"/>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <g:layoutHead/>
 </head>
 
@@ -35,7 +37,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#contactSubmenu"><i class="fa fa-address-card"></i>   <g:message code="menu.title.contact"/></a>
+                    <a href="#contactSubmenu" data-toggle="collapse" class="dropdown-toggle"><i class="fa fa-address-card"></i>   <g:message code="menu.title.contact"/></a>
                     <ul class="collapse list-unstyled" id="contactSubmenu">
                         <li>
                             <a href="/contact/create"><g:message code="submenu.create"/> </a>
@@ -46,7 +48,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#departmentSubmenu"><i class="fa fa-briefcase"></i>   <g:message code="menu.title.department"/></a>
+                    <a href="#departmentSubmenu" data-toggle="collapse" class="dropdown-toggle"><i class="fa fa-briefcase"></i>   <g:message code="menu.title.department"/></a>
                     <ul class="collapse list-unstyled" id="departmentSubmenu">
                         <li>
                             <a href="/department/create"><g:message code="submenu.create"/> </a>
@@ -64,6 +66,8 @@
     </div>
     <div class="footer" role="contentinfo"></div>
     <asset:javascript src="webjars/jquery/3.1.1/jquery.js"/>
+    <asset:javascript src="webjars/popper.js/1.14.3/popper.min.js"/>
+    <asset:javascript src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"/>
     <asset:javascript src="collapser.js"/>
 </body>
 </html>

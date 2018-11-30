@@ -17,14 +17,22 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.contact}" method="POST">
-                <fieldset class="form">
-                    <f:all bean="contact"/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-                </fieldset>
-            </g:form>
+            <div class="row justify-content-around">
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-success mb-3 mx-auto">
+                        <div class="card-body">
+                            <g:form resource="${this.contact}" method="POST">
+                                <fieldset class="form">
+                                    <f:all bean="contact"/>
+                                </fieldset>
+                                <fieldset class="buttons">
+                                    <g:submitButton name="create" class="save btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                                </fieldset>
+                            </g:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
