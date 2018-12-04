@@ -18,7 +18,7 @@
             <div class="message" role="status">${flash.message}</div>
         </g:if>
         <g:hasErrors bean="${this.category}">
-            <ul class="errors" role="alert">
+            <ul class="errors alert alert-dismissible alert-danger" role="alert">
                 <g:eachError bean="${this.category}" var="error">
                     <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
                 </g:eachError>
@@ -29,15 +29,22 @@
                 <div class="card border-success mb-3 mx-auto">
                     <div class="card-body">
                         <g:form resource="${this.category}" method="POST">
-                            <fieldset class="form">
-                                %{--<f:all bean="category" class="form-control"/>--}%
-                                <f:field bean="category" property="name">
-                                    <g:textField name="${property}" class="form-control" value="${}"/>
-                                </f:field>
-                            </fieldset>
-                            <fieldset class="buttons">
-                                <g:submitButton name="create" class="save btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-                            </fieldset>
+                            <div class="row">
+                                <fieldset class="form">
+                                    %{--<f:all bean="category" class="form-control"/>--}%
+                                    <f:field bean="category" property="name">
+                                        <g:textField name="${property}" value="${}"/>
+                                    </f:field>
+                                </fieldset>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <fieldset class="buttons">
+                                    <button name="create" class="save btn btn-primary" type="submit"><i class="fa fa-save"></i> <g:message code="default.button.create.label" default="Create"/> </button>
+                                    %{--<g:submitButton name="create" class="save btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />--}%
+                                </fieldset>
+                            </div>
+
                         </g:form>
                     </div>
                 </div>

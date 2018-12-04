@@ -26,15 +26,25 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.department}" method="PUT">
-                <g:hiddenField name="version" value="${this.department?.version}" />
-                <fieldset class="form">
-                    <f:all bean="department"/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-                </fieldset>
-            </g:form>
+            <div class="row justify-content-around">
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-success mb-3 mx-auto">
+                        <div class="card-body">
+                            <g:form resource="${this.department}" method="PUT">
+                                <g:hiddenField name="version" value="${this.department?.version}" />
+                                <fieldset class="form">
+                                    <f:all bean="department" except="byUser"/>
+                                </fieldset>
+                                <fieldset class="buttons">
+                                    <button class="save btn btn-light" type="submit"><i class="fa fa-redo-alt"></i><g:message code="default.button.update.label" default="Update"/></button>
+                                    %{--<input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />--}%
+                                </fieldset>
+                            </g:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </body>
 </html>

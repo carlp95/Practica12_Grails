@@ -33,7 +33,7 @@ class ContactController {
 
         try {
             contact.byUser = ((User)applicationContext.springSecurityService.getCurrentUser()).username
-            contact.created = new Date()
+//            contact.created = new Date()
             contactService.save(contact)
         } catch (ValidationException e) {
             respond contact.errors, view:'create'

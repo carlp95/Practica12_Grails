@@ -27,6 +27,10 @@
                 columns="${departmentsColumns}" data="${departmentsData}"/>
             <div id="chart"></div>
 
+            <g:if test="${role}">
+                %{--Aquí va un botón para administrar los usuarios--}%
+            </g:if>
+
         </section>
     </div>
 </body>

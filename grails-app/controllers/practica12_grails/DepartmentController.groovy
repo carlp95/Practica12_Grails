@@ -45,6 +45,7 @@ class DepartmentController {
         }
 
         try {
+            department.byUser = ((User)applicationContext.springSecurityService.getCurrentUser()).username
             departmentService.save(department)
         } catch (ValidationException e) {
             respond department.errors, view:'create'

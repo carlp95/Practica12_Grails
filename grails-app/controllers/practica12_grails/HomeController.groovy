@@ -32,7 +32,16 @@ class HomeController {
             }
         }
 
-        [user: (User) applicationContext.springSecurityService.getCurrentUser(),departmentsColumns: departmentList,
+        def user = (User) applicationContext.springSecurityService.getCurrentUser()
+
+        def userRole = false
+        user.authorities.each {
+            if (it.authority == 'ROLE_ADMIN'){
+                userRole = true
+            }
+        }
+
+        [user: (User) applicationContext.springSecurityService.getCurrentUser(), role: userRole,departmentsColumns: departmentList,
          departmentsData: contact_department_list ,hour: calendar.get(calendar.HOUR_OF_DAY)]
     }
 

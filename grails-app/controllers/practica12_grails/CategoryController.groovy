@@ -33,7 +33,7 @@ class CategoryController {
 
         try {
             category.byUser = ((User)applicationContext.springSecurityService.getCurrentUser()).username
-            category.created = new Date()
+//            category.created = new Date()
             categoryService.save(category)
         } catch (ValidationException e) {
             respond category.errors, view:'create'

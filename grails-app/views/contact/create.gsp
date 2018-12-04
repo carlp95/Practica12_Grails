@@ -11,7 +11,7 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <g:hasErrors bean="${this.contact}">
-            <ul class="errors" role="alert">
+            <ul class="errors alert alert-dismissible alert-danger" role="alert">
                 <g:eachError bean="${this.contact}" var="error">
                 <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
                 </g:eachError>
@@ -23,9 +23,11 @@
                         <div class="card-body">
                             <g:form resource="${this.contact}" method="POST">
                                 <fieldset class="form">
-                                    <f:all bean="contact"/>
+                                    <f:all bean="contact" />
                                 </fieldset>
+                                <br>
                                 <fieldset class="buttons">
+                                    <button name="create" class="save btn btn-primary" type="submit"><i class="fa fa-save"></i> <g:message code="default.button.create.label" default="Create"/> </button>
                                     <g:submitButton name="create" class="save btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                                 </fieldset>
                             </g:form>

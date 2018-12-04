@@ -3,7 +3,7 @@ package practica12_grails
 class Department {
 
     String name
-    Date created
+    Date dateCreated
     Date lastUpdated
     String byUser
 
@@ -11,9 +11,8 @@ class Department {
     static belongsTo = [Contact, User]
 
     static constraints = {
-        byUser(nullable: true)
-        name unique: true
-
+        name unique: true, blank: false
+        byUser(display:false, editable:false, nullable: true)
     }
     String toString(){
         name
