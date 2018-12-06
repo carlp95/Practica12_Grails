@@ -42,7 +42,7 @@ class CategoryController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'category.label', default: 'Category'), category.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'menu.title.category', default: 'Category'), category.name])
                 redirect category
             }
             '*' { respond category, [status: CREATED] }

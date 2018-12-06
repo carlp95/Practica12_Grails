@@ -58,6 +58,9 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <g:link controller="logout"><i class="fa fa-sign-out-alt"></i><g:message code="logout.label" default="Logout"/></g:link>
+                </li>
             </ul>
         </nav>
         <div id="content">

@@ -28,7 +28,7 @@
                                 <br>
                                 <fieldset class="buttons">
                                     <button name="create" class="save btn btn-primary" type="submit"><i class="fa fa-save"></i> <g:message code="default.button.create.label" default="Create"/> </button>
-                                    <g:submitButton name="create" class="save btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                                    %{--<g:submitButton name="create" class="save btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />--}%
                                 </fieldset>
                             </g:form>
                         </div>

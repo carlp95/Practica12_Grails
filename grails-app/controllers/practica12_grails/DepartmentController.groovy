@@ -54,7 +54,7 @@ class DepartmentController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'department.label', default: 'Department'), department.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'menu.title.department', default: 'Department'), department.name])
                 redirect department
             }
             '*' { respond department, [status: CREATED] }

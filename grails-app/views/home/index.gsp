@@ -18,6 +18,12 @@
             <h3><g:message code="night.welcome.label"/>, ${user.name}</h3>
         </g:elseif>
 
+        <g:if test="${role}">
+        %{--Aquí va un botón para administrar los usuarios--}%
+            <span class="badge badge-primary"><a href="/user/"><i class="fas fa-cogs"></i> <g:message code="manage.user.label" default="Manage Users"/></a></span>
+            <hr>
+            %{--<button class="btn btn-primary" name="manage_user" href="user/"></button>--}%
+        </g:if>
         <section class="row colset-2-its">
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
@@ -26,11 +32,6 @@
             <gvisualization:pieCoreChart elementId="chart" title="${message(code: 'pie.title', default: 'Contactos según departamento')}" width="${500}" height="${500}"
                 columns="${departmentsColumns}" data="${departmentsData}"/>
             <div id="chart"></div>
-
-            <g:if test="${role}">
-                %{--Aquí va un botón para administrar los usuarios--}%
-            </g:if>
-
         </section>
     </div>
 </body>

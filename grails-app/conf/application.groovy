@@ -4,6 +4,7 @@
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'practica12_grails.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'practica12_grails.UserRole'
 grails.plugin.springsecurity.authority.className = 'practica12_grails.Role'
+grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/dbconsole/**',      access: ['ROLE_ADMIN']],
